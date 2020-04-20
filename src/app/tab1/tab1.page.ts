@@ -21,7 +21,8 @@ weather:any;
     condition:'',
     feels:'',
     humid:'',
-    pressure:''
+    pressure:'',
+    time:''
   }
   //country object to retrive a city
   country:{
@@ -54,6 +55,7 @@ weather:any;
         //get particular data from API
         this.WeatherObj.temp=data['current']['temp_c'];
         this.WeatherObj.name=data['location']['name'];
+        this.WeatherObj.time=data['location']['localtime'];
         this.WeatherObj.country=data['location']['country'];
         this.WeatherObj.condition=data['current']['condition']['text'];
         this.WeatherObj.feels=data['current']['feelslike_c'];
