@@ -1,17 +1,43 @@
+
+<body onLoad="loadApp()">
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="flex">
+        <ion-list>
+          <ion-item lines="full">
+            <ion-icon slot="start" name="moon"></ion-icon>
+            <ion-label>
+              Dark Theme
+            </ion-label>
+            <ion-toggle id="themeToggle" slot="end"></ion-toggle>
+          </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+          <form (ngSubmit)="saveLocation()">
+            <ion-item>
+              <ion-icon name="business"></ion-icon>
+              <ion-label>
+                City:
+              </ion-label>
+              <!--2 way data binding-->
+              <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Enter City"></ion-input>
+            </ion-item>
+            <ion-button type="submit" block [routerLink]="['/tabs/tab1']" routerDirection="forward">Save Location</ion-button>
+
+          </form>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+</body>

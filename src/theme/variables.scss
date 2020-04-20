@@ -1,6 +1,8 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -12,7 +14,7 @@
   --ion-color-primary-tint: #4c8dff;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary: #3d81ff96;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
@@ -74,6 +76,12 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-toolbar-background: #3d81ff96;
+
+  --ion-tab-bar-color-selected: #3d81ff96;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -221,7 +229,7 @@
 
     --ion-item-background: #1e1e1e;
 
-    --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: #3d81ff96;
 
     --ion-tab-bar-background: #1f1f1f;
   }
@@ -229,4 +237,6 @@
   ion-title.title-large {
     --color: white;
   }
+
+  
 }

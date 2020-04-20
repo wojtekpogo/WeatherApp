@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      About
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row >
+      <ion-col class="flex">
+        <ion-list>
+          <ion-item>
+            <strong> App Name: </strong> WeatherApp
+          </ion-item>
+          <ion-item>
+            <strong> Version: </strong> 1.0.2
+          </ion-item>
+          <ion-item>
+            <strong> Description: </strong> Simple Weather App. Developed as a part of Mobile Application
+            Project
+          </ion-item>
+          
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>

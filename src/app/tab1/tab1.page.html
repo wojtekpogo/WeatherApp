@@ -1,17 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Weather
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="image">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2 class="country">{{WeatherObj.name}}, {{WeatherObj.country}}</h2>
+        <div class="icon"><img src ="{{WeatherObj.img}}" height="100" width="100"></div>
+        <h2 class="cond">{{WeatherObj.condition}}</h2>
+        <h2 class="temp">{{WeatherObj.temp}}°C</h2>
+      </ion-col>
+    
+    </ion-row>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-row class="justRow">
+      <ion-col class="details">
+        <ion-list>
+          <ion-item>
+            <strong>Temp:</strong>{{WeatherObj.temp}}<strong>°C</strong>
+          </ion-item>
+          <ion-item>
+            <strong>Feels like:</strong>{{WeatherObj.feels}}<strong>°C</strong>
+          </ion-item>
+          <ion-item>
+            <strong>Humidity:</strong>{{WeatherObj.humid}}
+          </ion-item>
+          <ion-item>
+            <strong>Pressure:</strong>{{WeatherObj.pressure}}<strong> hPa</strong>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+
 </ion-content>
