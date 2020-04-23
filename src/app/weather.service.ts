@@ -16,22 +16,23 @@ export class WeatherService {
   iconnumber;
   
   constructor(private httpClient: HttpClient,private storage:Storage) {
-    this.url='http://api.weatherapi.com/v1/current.json?key='+this.apiKey+'&q='
+    this.url='https://api.weatherapi.com/v1/current.json?key='+this.apiKey+'&q='
     this.iconurl='//cdn.weatherapi.com/weather/64x64/day/'
    }
 
 
-
+   //get weather function with city as a parameter
     GetWeather(city) :Observable<any>{
     // return this.httpClient.get('http://api.weatherapi.com/v1/current.json?key=f671eb6f10254d9abf5144258201704&q='+this.city);
      return this.httpClient.get(this.url+city) //API link attached with city variable
      
     }
-
-    GetIcon(weather):Observable<any>
-    {
-      return this.httpClient.get(this.iconurl+weather+'.png')
+    
+    //getLocation function with coordinates as a parameters
+    GetLocation(lat,long):Observable<any>{
+      return this.httpClient.get(this.url+lat+','+long);
     }
+
 
 
 

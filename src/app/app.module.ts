@@ -12,6 +12,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 import {HttpClientModule} from '@angular/common/http'; //including http client module
 import{Storage} from '@ionic/Storage';
 import { IonicStorageModule } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation/ngx';  //import for Geolocation purpose
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,  //geolocation added to providers
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

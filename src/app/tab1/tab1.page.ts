@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {WeatherService} from '../weather.service';
 import{Storage} from '@ionic/storage';
+import { logging } from 'protractor';
 
 @Component({
   selector: 'app-tab1',
@@ -28,24 +29,24 @@ weather:any;
   country:{
     city:string;
   }
-  Weathericon={
-    img:''
+  //location object to get a location from storage
+  location:{
+    lat:number;
+    long:number;
   }
-  
-  
-  
+
   //Used this Lifecycle hooks to automatically load stored location in settings
   //onIgnit didnt work
-  ionViewWillEnter(){
+  ionViewDidEnter(){
 
     this.storage.get('country').then((val)=>{
-      if(val!=null){
+      if(val!=null ){
         this.country =JSON.parse(val);
 
       }else{
         //set city to Galway as default
         this.country ={
-          city: 'Galway'
+          city: 'Galway',
         }
       }
 
@@ -64,8 +65,9 @@ weather:any;
         this.WeatherObj.pressure=data['current']['pressure_mb'];
       });
     });
-
     
+    
+
   }
   
 }

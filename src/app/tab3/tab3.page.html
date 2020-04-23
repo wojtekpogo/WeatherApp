@@ -1,5 +1,5 @@
 
-<body onLoad="loadApp()">
+<body>
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -13,28 +13,26 @@
     <ion-row>
       <ion-col class="flex">
         <ion-list>
-          <ion-item lines="full">
-            <ion-icon slot="start" name="moon"></ion-icon>
-            <ion-label>
-              Dark Theme
-            </ion-label>
-            <ion-toggle id="themeToggle" slot="end"></ion-toggle>
-          </ion-item>
-
+          
           <form (ngSubmit)="saveLocation()">
             <ion-item>
               <ion-icon name="business"></ion-icon>
               <ion-label>
-                City:
+                <strong>City:</strong>
               </ion-label>
               <!--2 way data binding-->
               <ion-input [(ngModel)]="city" name="city" type="text" placeholder="Enter City"></ion-input>
+              <ion-button type="submit" color="success" block [routerLink]="['/tabs/tab1']" routerDirection="forward">Save Location</ion-button>
             </ion-item>
-            <ion-button type="submit" block [routerLink]="['/tabs/tab1']" routerDirection="forward">Save Location</ion-button>
-
+            <ion-item>
+            <ion-icon name="paper-plane"></ion-icon>
+            <ion-label>
+              <strong>Go to location page</strong>
+            </ion-label>
+              <ion-button color="success" (click)="openGeolocalPage()">Location</ion-button>
+          </ion-item>
           </form>
         </ion-list>
-
       </ion-col>
     </ion-row>
   </ion-grid>

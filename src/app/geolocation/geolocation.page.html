@@ -1,0 +1,62 @@
+
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>Local Weather</ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="flex">
+        <ion-list>
+          <form>
+            <ion-item>
+              <ion-icon name="navigate"></ion-icon>
+              <ion-label>
+                <strong>Coordinates</strong>  {{lat}} {{long}}
+              </ion-label>
+              <ion-button color="success" (click)="getLocation()">Get Location</ion-button>
+              <ion-button color="secondary" (click)="backToSettings()"> Back</ion-button>
+            </ion-item>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2 class="country">{{WeatherObj.name}}, {{WeatherObj.country}}</h2>
+        <div class="icon"><img src ="{{WeatherObj.img}}" height="100" width="100"></div>
+        <h2 class="cond">{{WeatherObj.condition}}</h2>
+        <h2 class="temp">{{WeatherObj.temp}}°C</h2>
+      </ion-col>
+    
+    </ion-row>
+
+    <ion-row class="justRow">
+      <ion-col class="details">
+        <ion-list class="detailList">
+          <ion-item>
+            <strong>Temperature: </strong>{{WeatherObj.temp}}<strong>°C</strong>
+          </ion-item>
+          <ion-item>
+            <strong>Feels like: </strong>{{WeatherObj.feels}}<strong>°C</strong>
+          </ion-item>
+          <ion-item>
+            <strong>Humidity: </strong>{{WeatherObj.humid}}
+          </ion-item>
+          <ion-item>
+            <strong>Pressure: </strong>{{WeatherObj.pressure}}<strong> hPa</strong>
+            </ion-item>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+</ion-content>
+
