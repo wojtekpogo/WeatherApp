@@ -29,12 +29,7 @@ weather:any;
   country:{
     city:string;
   }
-  //location object to get a location from storage
-  location:{
-    lat:number;
-    long:number;
-  }
-
+ 
   //Used this Lifecycle hooks to automatically load stored location in settings
   //onIgnit didnt work
   ionViewDidEnter(){
